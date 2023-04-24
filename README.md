@@ -20,6 +20,6 @@ Users should be able to:
 <img src="./screenshot-desktop.png" width=75%, height=75%>
 
 ### Screenshot - Mobile 
-<img src="./screenshot-mobile.png" width=50%, height=50%>
+<img src="./screenshot-mobile.png" width=30%, height=30%>
 
 
