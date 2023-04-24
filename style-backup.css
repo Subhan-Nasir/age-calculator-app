@@ -1,0 +1,255 @@
+:root {
+    --mobile-res: 375px;
+    --desktop-res: 1440px;
+
+
+    /* Primary */
+    --purple: hsl(259, 100%, 65%);
+    --light-red: hsl(0, 100%, 67%);
+
+    /* Neutral */
+    --white: hsl(0, 0%, 100%);
+    --off-white: hsl(0, 0%, 94%);
+    --light-grey: hsl(0, 0%, 86%);
+    --smokey-grey: hsl(0, 1%, 44%);
+    --off-black: hsl(0, 0%, 8%);
+
+    /* Fonts */
+    --font-family: 'Poppins', sans-serif;
+    --fw-regular: 400;
+    --fw-medium: 700;
+    --fw-bold: 800;
+
+
+
+}
+
+
+/* ----------------------------------- */
+/* CSS Reset */
+/* ----------------------------------- */
+
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+
+/* ----------------------------------- */
+/* Custom CSS */
+/* ----------------------------------- */
+
+body {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: var(--off-white);
+    font-family: var(--font-family);
+    font-weight: var(--fw-regular);
+    font-style: italic;
+}
+
+.wrapper {
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+
+    max-width: 90vw;
+
+    background-color: var(--white);
+    padding: 4rem;
+
+
+    border-radius: 1.5rem;
+    border-bottom-right-radius: 10rem;
+
+
+}
+
+.input-fields{
+
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; */
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    gap: 1rem;
+
+    /* padding-right: clamp(1rem,1rem,12rem); */
+    padding-right: 12rem;
+}
+
+@media(max-width:600px){
+    .input-fields{
+        grid-template-columns: 1fr;
+        padding-right: clamp(1rem,1rem,12rem);
+    }
+}
+
+.form-item{
+    display: flex;
+    flex-direction: column;
+    max-width: 8rem;
+}
+
+.form-item > label{
+    font-weight: var(--fw-medium);
+    font-style: normal;
+    text-transform: uppercase;
+
+    letter-spacing: 0.2rem;
+    font-size: 0.75rem;
+
+    padding-bottom: 0.25rem;
+
+    color: var(--smokey-grey);
+}
+
+.form-item > input {
+    font-weight: var(--fw-bold);
+    font-style: normal;
+    
+    padding: 1rem;
+
+    border: 1px solid var(--light-grey);
+    border-radius: 0.4rem;
+
+}
+
+.form-item > input:focus{
+    border-color: var(--purple);
+}
+
+hr {
+    width: 100%;
+    height:2px;
+    border-width:0;
+    color:gray;
+    background-color:gray;
+   
+}
+
+.right-side-line{
+    display: none;
+}
+
+@media(max-width: 600px){
+    .right-side-line{
+        display: block;
+    }
+}
+
+
+.horizontal-line {
+    grid-column: 1/-1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.age-container{
+    padding-top: 3rem;
+}
+
+.result{
+    display: flex;
+    flex-wrap: nowrap;
+
+    font-size: max(1.5rem, 5vw);
+    gap: 0.5rem;
+
+    font-weight: var(--fw-bold);
+}
+
+.result > span{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.result-num{
+    color: var(--purple);
+}
